@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lista_usuarios/perfil_usuario.dart';
 
 class UsuarioSingle extends StatelessWidget {
   final String img;
@@ -33,7 +34,14 @@ Image(
             ),
              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [ElevatedButton(child: const Text('Ver perfil'), onPressed: (){
 
-              showDialog(context: context, builder: (context)=>SimpleDialog(title: const Text('Perfil del estudiante'), children: [Text(edad), Text(universidad)],));
+              Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => PerfilUsuario(img:img,
+                      nombre:nombre,
+                      carrera:carrera,
+                      colegio:colegio,
+                      edad:edad,
+                      universidad:universidad,)));
           })],)
             ],)
             
@@ -42,7 +50,7 @@ Image(
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [Text(nombre), Text(carrera), Text(colegio)],
+            children: [Text(nombre), Text(carrera), Text(universidad)],
           ),
          
           

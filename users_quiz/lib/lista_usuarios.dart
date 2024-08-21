@@ -58,8 +58,7 @@ class _ListaUsuariosState extends State<ListaUsuarios> {
   }
 
 
-  return MaterialApp(
-          home: Scaffold(
+  return Scaffold(
             body: FutureBuilder<Widget>(
               future: usuarios(),
               builder: (BuildContext context, AsyncSnapshot<Widget> snapshot) {
@@ -77,7 +76,7 @@ class _ListaUsuariosState extends State<ListaUsuarios> {
                 
               },
             ),
-          ),
-        );
+          ); 
+        
       } 
 }
